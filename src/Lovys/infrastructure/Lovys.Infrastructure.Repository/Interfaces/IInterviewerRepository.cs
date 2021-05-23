@@ -1,8 +1,6 @@
-﻿using Lovys.Domain.Models.Interfaces;
-
-namespace Lovys.Infrastructure.Repository.Interfaces
+﻿namespace Lovys.Infrastructure.Repository.Interfaces
 {
-    public interface IInterviewerRepository : IRepository<IInterviewerModel>
+    public interface IInterviewerRepository : ISchedulerRepository
     {
     }
 }

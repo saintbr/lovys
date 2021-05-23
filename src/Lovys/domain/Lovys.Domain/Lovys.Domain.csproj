@@ -8,4 +8,7 @@
   <ItemGroup>
     <ProjectReference Include="..\Lovys.Domain.Core\Lovys.Domain.Core.csproj" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Web\Response\Candidate\" />
+  </ItemGroup>
 </Project>

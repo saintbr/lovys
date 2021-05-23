@@ -2,8 +2,7 @@
 
 namespace Lovys.Domain.Models.Interfaces
 {
-    public interface ICandidateModel : IBaseModel
-    {
-        string Name { get; set; }
+    public interface ICandidateModel : ISchedulerModel
+    {        
     }
 }

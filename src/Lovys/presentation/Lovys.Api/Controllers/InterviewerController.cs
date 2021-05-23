@@ -1,44 +1,35 @@
 ﻿using Lovys.Api.Core.Controllers;
 using Lovys.Application.Services.Interfaces;
-using Lovys.Domain.Models.Interfaces;
-using Lovys.Domain.Web.Response;
+using Lovys.Domain.Web.Request.Candidate;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
 using System;
-using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace Lovys.Api.Controllers
 {
-    [Route("api/v1/schedule/interviewer")]
-    public class InterviewerController : BaseController<IInterviewerModel>
+    [Route("api/interviewer")]
+    public class InterviewerController : BaseController
     {
-        public InterviewerController(IInterviewerService service) : base(service)
+        public IInterviewerService Service { get; set; }
+
+        public InterviewerController(ILogger<InterviewerController> logger, IInterviewerService service) : base(logger)
         {
+            Service = service;
         }
 
-        [HttpGet("{id}")]
-        public async Task<IInterviewerModel> GetById(int id) => await Task.FromResult(Service.Get(id));
-
-        [HttpGet("{hash}")]
-        public async Task<IInterviewerModel> GetByHash(Guid hash) => await Task.FromResult(Service.Get(hash));
-
-        [HttpGet()]
-        public async Task<IEnumerable<IInterviewerModel>> GetAll() => await Task.FromResult(Service.Get());
-
-        [HttpGet("availability")]
-        public async Task<AvailabilityResponse> GetSchedule() => await Task.FromResult(new AvailabilityResponse
+        [HttpPost]
+        public async Task Post([FromBody] AvailabilityRequest request)
         {
-            Interviewer = "Maria",
-            AvailabilityIntervals = new AvailabilityInterval[]
+            try
             {
-                new AvailabilityInterval
-                {
-                    DayOfWeek = DayOfWeek.Sunday,
-                    Begin = DateTime.Parse("9:00 AM"),
-                    End = DateTime.Parse("16:00 PM"),
-                    Range = DateTime.Parse("16:00 PM").Subtract(DateTime.Parse("9:00 AM")).ToString()
-                },
+                await Task.CompletedTask;
             }
-        });
+            catch (Exception ex)
+            {
+                _logger.LogError(ex.Message);
+                throw;
+            }
+        }
     }
 }

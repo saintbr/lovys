@@ -1,8 +1,6 @@
-﻿using Lovys.Domain.Models.Interfaces;
-
-namespace Lovys.Infrastructure.Repository.Interfaces
+﻿namespace Lovys.Infrastructure.Repository.Interfaces
 {
-    public interface ICandidateRepository : IRepository<ICandidateModel>
+    public interface ICandidateRepository : ISchedulerRepository
     {
     }
 }

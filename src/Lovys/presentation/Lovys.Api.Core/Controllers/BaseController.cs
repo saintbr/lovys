@@ -1,17 +1,16 @@
-﻿using Lovys.Application.Services.Interfaces;
-using Lovys.Domain.Core.Models;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
 
 namespace Lovys.Api.Core.Controllers
 {
     [ApiController]
-    public class BaseController<T> : ControllerBase where T : IBaseModel 
+    public class BaseController : ControllerBase
     {
-        public IApplicationService<T> Service { get; set; }
+        public ILogger<BaseController> _logger { get; set; }
 
-        public BaseController(IApplicationService<T> service)
+        public BaseController(ILogger<BaseController> logger)
         {
-            Service = service;
+            _logger = logger;
         }
     }
 }

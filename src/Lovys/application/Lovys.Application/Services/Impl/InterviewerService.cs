@@ -6,25 +6,25 @@ using System.Collections.Generic;
 
 namespace Lovys.Application.Services.Impl
 {
-    public class InterviewerService : ApplicationService<IInterviewerModel>, IInterviewerService
+    public class InterviewerService : SchedulerService, IInterviewerService
     {
         public InterviewerService(IInterviewerRepository repository) : base(repository)
         {
         }
 
-        public override IInterviewerModel Get(int id)
+        public override IEnumerable<ISchedulerModel> Get()
         {
-            return Repository.Get(id);
+            return base.Get();
         }
 
-        public override IInterviewerModel Get(Guid hash)
+        public override ISchedulerModel Get(Guid hash)
         {
-            return Repository.Get(hash);
+            return base.Get(hash);
         }
 
-        public override IEnumerable<IInterviewerModel> Get()
+        public override ISchedulerModel Get(int id)
         {
-            return Repository.Get();
+            return base.Get(id);
         }
     }
 }

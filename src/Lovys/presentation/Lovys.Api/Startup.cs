@@ -23,8 +23,10 @@ namespace Lovys.Api
         public void ConfigureServices(IServiceCollection services)
         {
             services
+                .AddSingleton<ISchedulerService, SchedulerService>()
                 .AddSingleton<ICandidateService, CandidateService>()
                 .AddSingleton<IInterviewerService, InterviewerService>()
+                .AddTransient<ISchedulerRepository, SchedulerRepository>()
                 .AddTransient<ICandidateRepository, CandidateRepository>()
                 .AddTransient<IInterviewerRepository, InterviewerRepository>();
 

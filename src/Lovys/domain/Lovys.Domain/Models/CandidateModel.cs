@@ -1,10 +1,8 @@
-﻿using Lovys.Domain.Core.Models;
-using Lovys.Domain.Models.Interfaces;
+﻿using Lovys.Domain.Models.Interfaces;
 
 namespace Lovys.Domain.Models
 {
-    public partial class CandidateModel : BaseModel, ICandidateModel
+    public partial class CandidateModel : SchedulerModel, ICandidateModel
     {
-        public string Name { get; set; }
     }
 }

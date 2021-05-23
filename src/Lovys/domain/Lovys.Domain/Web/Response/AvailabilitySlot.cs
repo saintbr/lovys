@@ -4,7 +4,7 @@ using System;
 
 namespace Lovys.Domain.Web.Response
 {
-    public partial class AvailabilityInterval
+    public partial class AvailabilitySlot
     {
         [JsonConverter(typeof(StringEnumConverter))]
         public DayOfWeek DayOfWeek { get; set; }

@@ -5,21 +5,21 @@ using System.Collections.Generic;
 
 namespace Lovys.Infrastructure.Repository.Impl
 {
-    public class CandidateRepository : Repository<ICandidateModel>, ICandidateRepository
+    public class CandidateRepository : SchedulerRepository, ICandidateRepository
     {
-        public override ICandidateModel Get(int id)
+        public override IEnumerable<ISchedulerModel> Get()
         {
-            throw new NotImplementedException();
+            return base.Get();
         }
 
-        public override ICandidateModel Get(Guid hash)
+        public override ISchedulerModel Get(int id)
         {
-            throw new NotImplementedException();
+            return base.Get(id);
         }
 
-        public override IEnumerable<ICandidateModel> Get()
+        public override ISchedulerModel Get(Guid hash)
         {
-            throw new NotImplementedException();
+            return base.Get(hash);
         }
     }
 }

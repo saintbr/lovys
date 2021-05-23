@@ -1,12 +1,8 @@
-﻿using Lovys.Domain.Core.Models;
-using Lovys.Domain.Models.Interfaces;
-using System.Collections.Generic;
+﻿using Lovys.Domain.Models.Interfaces;
 
 namespace Lovys.Domain.Models
 {
-    public partial class InterviewerModel : BaseModel, IInterviewerModel
+    public partial class InterviewerModel : SchedulerModel, IInterviewerModel
     {
-        public string Name { get; set; }
-        public List<IAvailableSlotModel> AvailableSlots { get; set; }
     }
 }
