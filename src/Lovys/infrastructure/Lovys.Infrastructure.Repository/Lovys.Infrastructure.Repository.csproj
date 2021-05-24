@@ -5,5 +5,6 @@
   <ItemGroup>
     <ProjectReference Include="..\..\domain\Lovys.Domain.Core\Lovys.Domain.Core.csproj" />
     <ProjectReference Include="..\..\domain\Lovys.Domain\Lovys.Domain.csproj" />
+    <ProjectReference Include="..\Lovys.Infrastructure.Common\Lovys.Infrastructure.Common.csproj" />
   </ItemGroup>
 </Project>

@@ -1,6 +1,7 @@
 ﻿using Lovys.Api.Core.Controllers;
 using Lovys.Application.Services.Interfaces;
-using Lovys.Domain.Web.Request.Candidate;
+using Lovys.Domain.Models;
+using Lovys.Domain.Web.Request;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;
@@ -19,16 +20,33 @@ namespace Lovys.Api.Controllers
         }
 
         [HttpPost]
-        public async Task Post([FromBody] AvailabilityRequest request)
+        public async Task<IActionResult> PostAsync([FromBody] AvailabilityRequest request)
         {
             try
             {
-                await Task.CompletedTask;
+                if (await Service.AddOrUpdateAvailability(request, new CandidateModel { ID = 1, Hash = Guid.NewGuid(), Name = "Joao" }))
+                    return await Task.FromResult(new OkObjectResult(request));
+
+                return await Task.FromResult(new BadRequestResult());
             }
             catch (Exception ex)
             {
                 _logger.LogError(ex.Message);
-                throw;
+                return await Task.FromResult(new StatusCodeResult(500));
+            }
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> GetAsync() 
+        {
+            try
+            {
+                return await Task.FromResult(new OkObjectResult(Service.Get(1)));
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex.Message);
+                return await Task.FromResult(new StatusCodeResult(500));
             }
         }
     }

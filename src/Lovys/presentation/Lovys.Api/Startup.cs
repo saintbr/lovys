@@ -8,6 +8,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
+using System.Text.Json.Serialization;
 
 namespace Lovys.Api
 {
@@ -23,14 +24,13 @@ namespace Lovys.Api
         public void ConfigureServices(IServiceCollection services)
         {
             services
-                .AddSingleton<ISchedulerService, SchedulerService>()
                 .AddSingleton<ICandidateService, CandidateService>()
                 .AddSingleton<IInterviewerService, InterviewerService>()
                 .AddTransient<ISchedulerRepository, SchedulerRepository>()
                 .AddTransient<ICandidateRepository, CandidateRepository>()
                 .AddTransient<IInterviewerRepository, InterviewerRepository>();
 
-            services.AddControllers();
+            services.AddControllers().AddJsonOptions(opts => { opts.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter()); });
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "LovysApi", Version = "v1" });

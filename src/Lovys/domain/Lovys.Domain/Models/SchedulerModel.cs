@@ -7,6 +7,6 @@ namespace Lovys.Domain.Models
     public partial class SchedulerModel : BaseModel, ISchedulerModel
     {
         public string Name { get; set; }
-        public IEnumerable<IAvailableSlotModel> AvailableSlotModels { get; set; }
+        public List<AvailableSlotModel> AvailableSlots { get; set; }
     }
 }

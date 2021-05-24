@@ -9,5 +9,7 @@ namespace Lovys.Infrastructure.Repository.Interfaces
         T Get(int id);
         T Get(Guid hash);
         IEnumerable<T> Get();
+        void Create(T model);
+        void Update(T model);
     }
 }

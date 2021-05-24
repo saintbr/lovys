@@ -1,0 +1,79 @@
+[
+  {
+    "Name": "Maria",
+    "AvailableSlots": [
+      {
+        "DayOfWeek": "Monday",
+        "Begin": "T09AM",
+        "End": "T04PM",
+        "ID": 0,
+        "Hash": "00000000-0000-0000-0000-000000000000"
+      },
+      {
+        "DayOfWeek": "Tuesday",
+        "Begin": "T09AM",
+        "End": "T04PM",
+        "ID": 0,
+        "Hash": "00000000-0000-0000-0000-000000000000"
+      },
+      {
+        "DayOfWeek": "Wednesday",
+        "Begin": "T09AM",
+        "End": "T04PM",
+        "ID": 0,
+        "Hash": "00000000-0000-0000-0000-000000000000"
+      },
+      {
+        "DayOfWeek": "Thursday",
+        "Begin": "T09AM",
+        "End": "T04PM",
+        "ID": 0,
+        "Hash": "00000000-0000-0000-0000-000000000000"
+      },
+      {
+        "DayOfWeek": "Friday",
+        "Begin": "T09AM",
+        "End": "T04PM",
+        "ID": 0,
+        "Hash": "00000000-0000-0000-0000-000000000000"
+      }
+    ],
+    "ID": 1,
+    "Hash": "5f0005ce-ac38-4539-a439-1ce63f25d29f"
+  },
+  {
+    "Name": "Diana",
+    "AvailableSlots": [
+      {
+        "DayOfWeek": "Monday",
+        "Begin": "T12PM",
+        "End": "T06PM",
+        "ID": 0,
+        "Hash": "00000000-0000-0000-0000-000000000000"
+      },
+      {
+        "DayOfWeek": "Wednesday",
+        "Begin": "T12PM",
+        "End": "T06PM",
+        "ID": 0,
+        "Hash": "00000000-0000-0000-0000-000000000000"
+      },
+      {
+        "DayOfWeek": "Tuesday",
+        "Begin": "T09AM",
+        "End": "T12PM",
+        "ID": 0,
+        "Hash": "00000000-0000-0000-0000-000000000000"
+      },
+      {
+        "DayOfWeek": "Thursday",
+        "Begin": "T09AM",
+        "End": "T12PM",
+        "ID": 0,
+        "Hash": "00000000-0000-0000-0000-000000000000"
+      }
+    ],
+    "ID": 2,
+    "Hash": "599f7a55-c0fb-410a-8b6e-1619bbaf75fa"
+  }
+]

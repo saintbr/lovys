@@ -7,8 +7,10 @@ namespace Lovys.Infrastructure.Repository.Impl
 {
     public abstract class Repository<T> : IRepository<T> where T : IBaseModel
     {
+        public abstract void Create(T model);
         public abstract T Get(int id);
         public abstract T Get(Guid hash);
         public abstract IEnumerable<T> Get();
+        public abstract void Update(T model);
     }
 }

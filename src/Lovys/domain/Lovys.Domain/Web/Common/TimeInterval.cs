@@ -1,0 +1,30 @@
+﻿namespace Lovys.Domain.Web.Common
+{
+    public enum TimeInterval
+    {
+        T12AM,
+        T01AM,
+        T02AM,
+        T03AM,
+        T04AM,
+        T05AM,
+        T06AM,
+        T07AM,
+        T08AM,
+        T09AM,
+        T10AM,
+        T11AM,
+        T12PM,
+        T01PM,
+        T0PAM,
+        T03PM,
+        T04PM,
+        T05PM,
+        T06PM,
+        T07PM,
+        T08PM,
+        T09PM,
+        T10PM,
+        T11PM        
+    }
+}

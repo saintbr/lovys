@@ -3,12 +3,17 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Remove="Web\Response\Candidate\**" />
+    <EmbeddedResource Remove="Web\Response\Candidate\**" />
+    <None Remove="Web\Response\Candidate\**" />
+  </ItemGroup>
+  <ItemGroup>
     <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Lovys.Domain.Core\Lovys.Domain.Core.csproj" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Web\Response\Candidate\" />
+    <Folder Include="Web\Request\Candidate\" />
   </ItemGroup>
 </Project>

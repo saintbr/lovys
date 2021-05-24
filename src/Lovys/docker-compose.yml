@@ -12,4 +12,3 @@ services:
     build:
       context: .
       dockerfile: identity/Lovys.Identity/Dockerfile
-
