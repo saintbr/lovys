@@ -1,0 +1,44 @@
+[
+  {
+    "Name": "Joao",
+    "AvailableSlots": [
+      {
+        "DayOfWeek": "Monday",
+        "Begin": "T09AM",
+        "End": "T10AM",
+        "ID": 0,
+        "Hash": "00000000-0000-0000-0000-000000000000"
+      },
+      {
+        "DayOfWeek": "Tuesday",
+        "Begin": "T09AM",
+        "End": "T10AM",
+        "ID": 0,
+        "Hash": "00000000-0000-0000-0000-000000000000"
+      },
+      {
+        "DayOfWeek": "Wednesday",
+        "Begin": "T10AM",
+        "End": "T12PM",
+        "ID": 0,
+        "Hash": "00000000-0000-0000-0000-000000000000"
+      },
+      {
+        "DayOfWeek": "Thursday",
+        "Begin": "T09AM",
+        "End": "T10AM",
+        "ID": 0,
+        "Hash": "00000000-0000-0000-0000-000000000000"
+      },
+      {
+        "DayOfWeek": "Friday",
+        "Begin": "T09AM",
+        "End": "T10AM",
+        "ID": 0,
+        "Hash": "00000000-0000-0000-0000-000000000000"
+      }
+    ],
+    "ID": 1,
+    "Hash": "ebd95174-3122-4b8e-b7c3-38abddc3e52c"
+  }
+]

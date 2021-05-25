@@ -1,0 +1,14 @@
+version: '3.4'
+
+services:
+  lovys.api:
+    image: ${DOCKER_REGISTRY-}lovysapi
+    build:
+      context: .
+      dockerfile: presentation/Lovys.Api/Dockerfile
+
+  lovys.identity:
+    image: ${DOCKER_REGISTRY-}lovysidentity
+    build:
+      context: .
+      dockerfile: identity/Lovys.Identity/Dockerfile
