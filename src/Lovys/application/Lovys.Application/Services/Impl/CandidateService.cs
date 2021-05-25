@@ -6,6 +6,7 @@ using Lovys.Infrastructure.Repository.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Threading.Tasks;
 
 namespace Lovys.Application.Services.Impl
@@ -59,6 +60,11 @@ namespace Lovys.Application.Services.Impl
                 Repository.Update(candidate);
             }
             return await Task.FromResult(true);
+        }
+
+        public override IEnumerable<ISchedulerModel> Get(Expression<Func<ISchedulerModel, bool>> filter)
+        {
+            return Repository.Get(filter);
         }
 
         public override ISchedulerModel Get(int id)

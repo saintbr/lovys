@@ -6,6 +6,7 @@ using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 
 namespace Lovys.Infrastructure.Repository.Impl
 {
@@ -24,6 +25,11 @@ namespace Lovys.Infrastructure.Repository.Impl
         public override ISchedulerModel Get(Guid hash)
         {
             return JsonFileHelper.GetFile<InterviewerModel>().FirstOrDefault(c => c.Hash.Equals(hash));
+        }
+
+        public override IEnumerable<ISchedulerModel> Get(Expression<Func<ISchedulerModel, bool>> filter)
+        {
+            return Get().AsQueryable().Where(filter);
         }
 
         public override void Create(ISchedulerModel model)

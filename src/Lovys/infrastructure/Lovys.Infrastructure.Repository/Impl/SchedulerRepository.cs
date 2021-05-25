@@ -2,6 +2,7 @@
 using Lovys.Infrastructure.Repository.Interfaces;
 using System;
 using System.Collections.Generic;
+using System.Linq.Expressions;
 
 namespace Lovys.Infrastructure.Repository.Impl
 {
@@ -23,6 +24,11 @@ namespace Lovys.Infrastructure.Repository.Impl
         }
 
         public override IEnumerable<ISchedulerModel> Get()
+        {
+            throw new NotImplementedException();
+        }
+
+        public override IEnumerable<ISchedulerModel> Get(Expression<Func<ISchedulerModel, bool>> filter)
         {
             throw new NotImplementedException();
         }

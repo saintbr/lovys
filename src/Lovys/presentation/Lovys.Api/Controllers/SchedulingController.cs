@@ -1,10 +1,12 @@
 ﻿using Lovys.Api.Core.Controllers;
 using Lovys.Application.Services.Interfaces;
+using Lovys.Domain.Web.Common;
 using Lovys.Domain.Web.Request.Schedule;
 using Lovys.Domain.Web.Response.Schedule;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace Lovys.Api.Controllers
@@ -26,7 +28,9 @@ namespace Lovys.Api.Controllers
         {
             try
             {
-                return await Task.FromResult(new ScheduleResponseCollection { new ScheduleResponse {  Schedules = new ScheduleInfo { } } });
+                var candidates = CandidateService.Get(c => c.Name.Equals(request.Candidate));
+                var interviewers = InterviewerService.Get(i => request.Interviewer.Contains(i.Name));
+                return await Task.FromResult(await CandidateService.GetSchedulerAvailability(candidates, interviewers));
             }
             catch (Exception ex)
             {
